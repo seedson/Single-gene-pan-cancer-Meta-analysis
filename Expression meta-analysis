@@ -1,0 +1,17 @@
+# R codes for meta-analysis for evaluation of whether a gene expression is change in cancers than controls
+# Prepare survial data as the same format in "Low_CFTR_OR.txt"
+# Open your RStudio, set working directory ,input data by
+setwd("")
+data=read.table("Low_CFTR_OR.txt",header=TRUE,sep="\t",check.names=F,quote="")
+data
+# Load package, please install before loading
+library(meta)
+metabin(event.e, n.e,event.c,n.c,data=data,sm="OR")
+
+#To evaluate which model to use as described in our study and other meta-analysis study,in our case random-effect model
+metaresult<-metabin(event.e, n.e,event.c,n.c,data=data,sm="OR",studlab=paste(study, year),comb.random=TRUE)
+
+# plot forest(meta-analysis visualization) and funnel plot (visual evaluation of publication bias), respectively
+
+forest(metaresult)
+funnel(metaresult)
