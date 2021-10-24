@@ -1,0 +1,47 @@
+# R codes for meta-analysis
+# Prepare survial data as the same format in "CFTR_OV.txt"
+# Open your RStudio, set working directory ,input data by
+setwd("")
+data=read.table("CFTR_OV.txt",header=TRUE,sep="\t",check.names=F,quote="")
+data
+# Load package, please install before loading
+library(meta)
+#1.calculate selnhr value by 
+
+cont=data
+lnhr=log(cont$hr)
+lnlci=log(cont$lci)
+lnuci=log(cont$uci)
+selnhr=(lnuci-lnlci)/(2*1.96)
+selnhr
+
+#2.
+#Overall analysis (Evaluate the impact of all indicators on HR)
+#Please modify the random-effect model (comb.random) and fixed model parameters (comb.fixed) as appropriate （In this case, we use fixed-effect model ）
+test=metagen(lnhr,selnhr,sm="hr",data = cont, studlab = paste(cont$study, cont$year, sep=","),comb.random = FALSE,comb.fixed = TRUE)
+forest(test)
+
+#3.
+#Subgroup analysis by the parameters of interest
+#For example, subgroup analysis based on PROBE_ID, then added byvar = PROBE_ID
+PROBE_ID=metagen(lnhr,selnhr,sm="hr",data = cont, studlab = paste(cont$study, cont$year, sep=","),comb.random = FALSE,comb.fixed = TRUE, byvar = PROBE_ID)
+forest(PROBE_ID)
+
+#In this study, we performed anathor subgroup analysis for study (microarray)  
+study=metagen(lnhr,selnhr,sm="hr",data = cont, studlab = paste(cont$study, cont$year, sep=","),comb.random = FALSE,comb.fixed = TRUE, byvar = study)
+#forest plot based on subgroup analysis of study
+forest(study)
+
+#Please change columne names accordingly if you apply subgroup analysis on new data set
+
+
+#4.
+#Funnel plot for publication bias
+
+funnel(test)
+title("Publication bias")
+
+#5. Apply the workflow on other meta-analysis regarding to survival data,
+
+
+
