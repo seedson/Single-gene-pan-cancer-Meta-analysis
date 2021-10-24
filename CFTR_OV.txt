@@ -1,0 +1,25 @@
+study	PROBE_ID	hr	lci	uci	outcome
+jacob-00182-CANDF	215702_s_at	1.08	0.51	2.3	Overall Survival
+jacob-00182-CANDF	217026_at	0.82	0.45	1.49	Overall Survival
+jacob-00182-CANDF	215703_at	1.23	0.41	3.68	Overall Survival
+jacob-00182-CANDF	205043_at	1.05	0.69	1.6	Overall Survival
+jacob-00182-HLM	217026_at	1.12	0.48	2.62	Overall Survival
+jacob-00182-HLM	215702_s_at	0.91	0.61	1.38	Overall Survival
+jacob-00182-HLM	215703_at	1.13	0.44	2.87	Overall Survival
+jacob-00182-HLM	205043_at	0.97	0.78	1.21	Overall Survival
+MICHIGAN-LC	AC000061_cds2_at	0.8	0.25	2.55	Overall Survival
+jacob-00182-MSK	205043_at	0.65	0.46	0.91	Overall Survival
+jacob-00182-MSK	215702_s_at	0.57	0.32	0.99	Overall Survival
+jacob-00182-MSK	217026_at	0.36	0.13	1	Overall Survival
+jacob-00182-MSK	215703_at	0.47	0.15	1.45	Overall Survival
+GSE13213	A_23_P215720	0.81	0.69	0.94	Overall Survival
+GSE31210	217026_at	0.57	0.38	0.84	Overall Survival
+GSE31210	234702_x_at	0.99	0.7	1.41	Overall Survival
+GSE31210	234706_x_at	0.91	0.69	1.22	Overall Survival
+GSE31210	215703_at	0.98	0.73	1.33	Overall Survival
+GSE31210	215702_s_at	0.92	0.71	1.19	Overall Survival
+GSE31210	205043_at	0.95	0.77	1.16	Overall Survival
+jacob-00182-UM	215703_at	0.62	0.36	1.04	Overall Survival
+jacob-00182-UM	205043_at	0.99	0.83	1.18	Overall Survival
+jacob-00182-UM	217026_at	1.07	0.6	1.93	Overall Survival
+jacob-00182-UM	215702_s_at	0.83	0.64	1.08	Overall Survival
